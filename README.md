@@ -1,27 +1,48 @@
-# Opportunity-OS
-*The goal is simple: help more people see a path forward—and give them the tools to take it.*
-## Inspiration
-Opportunity OS began with a simple thought: valuable education and career opportunities are scattered across disconnected sites, each with different requirements, deadlines, and next steps. That makes it difficult for people without a GED and early-career builders to see all their options for a better livelihood.
-For learners preparing for a GED, entering the workforce, improving digital confidence, or changing careers, the next right step is often unclear. Opportunity OS brings those steps into one supportive, personalized place.
-## What it does
-Opportunity OS is an AI-guided growth platform that helps people move from where they are today toward the life and career they want.
-Use the AI-guided navigator to create a plan for opportunities such as programs, internships, jobs, and learning pathways. It turns a person's goals, skills, constraints, and interests into a prioritized plan of action.
-## How it works
-A user shares their current situation, interests, goals, and constraints. Opportunity OS creates a practical plan that connects learning, credentials, career preparation, and real opportunities. Instead of presenting a long list of tasks, the platform explains why each next step matters and helps users build momentum over time.
-Opportunity OS organizes relevant opportunities, explains why they fit, surfaces key requirements and deadlines, and helps break the path into actionable next steps. The experience is designed to make progress feel concrete rather than overwhelming.
-## Built with OpenAI
-The OpenAI Build Week version is being built with Codex and GPT-5.6. GPT-5.6 supports the reasoning and personalized guidance layer, while Codex accelerates implementation and iteration across the product experience.
-## Key experiences
-- AI tutoring that explains concepts in simple, approachable language
-- GED preparation, practice, and learning support
-- Digital literacy training for email, Microsoft Office, smartphones, and online safety
-- AI-assisted resume building, job search guidance, and interview coaching
-- Financial literacy lessons and practical planning tools
-- Skill certifications, learning paths, and career exploration
-- Career recommendations based on a user’s interests, strengths, and goals
-- Mentorship, community support, and progress check-ins
-- A personalized roadmap that adapts as the user develops new skills and completes milestones
-## Built with OpenAI
-Opportunity OS is being developed with Codex and GPT‑5.6. GPT‑5.6 powers the personalized guidance and reasoning layer, helping turn user goals into relevant, understandable action plans. Codex accelerates implementation and iteration across the product experience.
-## Vision
-Opportunity OS starts with GED and workforce support but is designed to grow into a broader platform for AI literacy, career coaching, financial education, workforce development, and lifelong learning.
+# Orbit — Campaign Concept Studio
+
+Orbit turns a focused marketing brief into a campaign platform, three copy routes, a launch checklist, and image directions that can be rendered into campaign visuals.
+
+## Stack and API boundary
+
+- Browser: a lightweight, responsive HTML/CSS/JS interface in `public/`. It only sends the brief to `/api/campaign` and an approved visual prompt to `/api/image`.
+- Server: `server.js` hosts the UI and makes every OpenAI request. `OPENAI_API_KEY` is read only from the server environment and is never returned to the browser.
+- OpenAI: both flows use `openai.responses.create()` from the official Node SDK. Text uses structured JSON output; visuals use the Responses API `image_generation` built-in tool. There is no legacy Completions or Chat Completions code.
+
+## Run locally
+
+1. Install Node.js 20 or newer.
+2. Install dependencies: `npm install`
+3. Copy `.env.example` to `.env` and set `OPENAI_API_KEY`.
+4. Start the app: `npm run dev`
+5. Open `http://localhost:3000`.
+
+`OPENAI_API_KEY` must remain server-only. Do not add it to frontend build variables or commit `.env`.
+
+## Configuration
+
+Adjust these values in `.env` without changing application code:
+
+| Setting | Default | Purpose |
+| --- | --- | --- |
+| `OPENAI_TEXT_MODEL` | `gpt-5.6-terra` | Campaign reasoning and structured copy |
+| `OPENAI_IMAGE_MODEL` | `gpt-5.6-terra` | Mainline model that calls the Responses image tool |
+| `OPENAI_IMAGE_QUALITY` | `medium` | Visual fidelity / cost tradeoff |
+| `OPENAI_IMAGE_SIZE` | `1536x1024` | Generated campaign-art aspect ratio |
+
+The creative instructions are in `server.js`: change the campaign writing behavior in the `instructions` value of `/api/campaign`, and adjust image direction guardrails in `/api/image`. The JSON contract is the `schema` constant near the top of the server file.
+
+## Deploy
+
+This is a standard Node web service. On Render, Railway, Fly, a container service, or a VM: set `OPENAI_API_KEY` and the optional configuration values in the provider’s encrypted environment settings, run `npm install`, and launch with `npm start`. The platform should route traffic to `PORT` (the app defaults to 3000). Never place the API key in static files or browser configuration.
+
+## Validation plan
+
+1. Run `npm run check` for syntax validation.
+2. Run the example brief and confirm the response always includes one concept, three variants, 5–8 checklist items, and two image prompts.
+3. Generate both visual directions; confirm returned image data renders and the key stays absent from browser network payloads/source.
+4. Test empty required fields, no selected channel, an invalid/missing API key, and a blocked/failed image request; each should provide a useful UI state.
+5. Review generated copy for product-claim accuracy, brand appropriateness, accessibility, and image-policy fit before publishing.
+
+## Current OpenAI guidance used
+
+The implementation follows the [Responses API image-generation guide](https://developers.openai.com/api/docs/guides/image-generation), which documents `responses.create` with the `image_generation` built-in tool and its base64 image result. The [model catalog](https://developers.openai.com/api/docs/models) lists GPT‑5.6 Terra as a balance of intelligence and cost; this project defaults to your selected `gpt-5.6-terra` and keeps that choice configurable.
