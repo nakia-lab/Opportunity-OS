@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Opportunity OS</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css"></head>
+<body><div class="app-shell"><aside><a class="logo" href="#"><i>✦</i><span>Opportunity<br>OS</span></a><nav><button class="active" data-view="home"><b>⌂</b> Your path</button><button data-view="skills"><b>◇</b> Skills studio</button><button data-view="opportunities"><b>↗</b> Opportunities</button><button data-view="guide"><b>✦</b> Ask your guide</button></nav><div class="side-bottom" data-open-profile>
+  <div class="profile-dot">AM</div>
+  <div><strong>Your journey</strong><span>Personal workspace</span></div>
+</div></aside><main><header><button class="menu" aria-label="Open navigation">☰</button><p class="crumb">YOUR PATH <span>/</span> DASHBOARD</p><div class="header-right"><span class="status"><i></i> Building momentum</span><div id="user-links" class="social-links"></div><button class="avatar">AM</button></div></header>
+<section id="home" class="view active"><div class="welcome"><div><p class="eyebrow">A clearer way forward</p><h1>Start where you are.<br><em>Go where you want.</em></h1><p>Turn your goals, strengths, and available time into a next-step plan that grows with you.</p><button class="primary" data-start>Build my roadmap <b>→</b></button></div><div class="hero-art"><div class="sun"></div><div class="path path-one"></div><div class="path path-two"></div><div class="milestone one">1</div><div class="milestone two">2</div><div class="milestone three">3</div><span>YOUR NEXT CHAPTER</span></div></div><div class="proof"><span><b>01</b> Learn in plain language</span><span><b>02</b> Build useful skills</span><span><b>03</b> Take real next steps</span></div><section class="preview"><div class="section-label"><p class="eyebrow">Your starting place</p><span>Made for progress, not perfection</span></div><div class="preview-grid"><article><i class="icon lavender">✦</i><h3>Learn with confidence</h3><p>Break big ideas into simple, useful lessons—at your pace.</p></article><article><i class="icon yellow">↗</i><h3>Find your next move</h3><p>Turn interests and goals into a practical plan of action.</p></article><article><i class="icon coral">✓</i><h3>See your growth</h3><p>Build momentum through small milestones that add up.</p></article></div></section></section>
+<section id="onboarding" class="view"><div class="flow-head"><button class="back" data-back>← Back</button><p class="eyebrow">Your first roadmap</p><span>01 / 01</span></div><div class="intake"><div><h2>Let’s start with<br>your <em>next chapter.</em></h2><p>There’s no perfect answer. A few honest details help us make your plan practical.</p></div><form id="roadmap-form"><label>What would you like to work toward?<textarea name="goal" required placeholder="Example: Finish my GED and find an entry-level role in healthcare."></textarea></label><label>Where are you today?<textarea name="current" required placeholder="Share what’s going well, what feels hard, or what you’ve already tried."></textarea></label><label>What interests or strengths do you bring?<input name="interests" required placeholder="Example: I enjoy helping people and I’m organized."></label><label>How much time can you make this week?<select name="time" required><option value="">Choose a realistic amount</option><option>1–2 hours</option><option>3–5 hours</option><option>6–10 hours</option><option>10+ hours</option></select></label><button class="primary" type="submit">Create my roadmap <b>→</b></button><p class="privacy">Your answers are used only to generate this plan. Don’t include sensitive personal information.</p></form></div></section>
+<section id="roadmap" class="view"><div class="roadmap-title"><div><p class="eyebrow">Your personalized plan</p><h2 id="north-star">Your path is taking shape.</h2></div><button class="outline" data-start>Refresh my plan</button></div><div class="momentum"><div><p class="eyebrow">Momentum score</p><strong id="momentum">—</strong><span>/ 100</span><p id="coach-note">Your plan will show a realistic place to begin.</p></div><div class="momentum-ring"><div><span>Small steps<br>count.</span></div></div></div><div class="roadmap-grid"><section class="steps"><div class="section-label"><p class="eyebrow">This week’s next steps</p><span id="welcome"></span></div><div id="steps-list"></div></section><section class="opportunity-list"><div class="section-label"><p class="eyebrow">Worth exploring</p><span>Starting points</span></div><div id="opportunities-list"></div></section></div></section>
+<section id="skills" class="view"><div class="skills-nav"><button class="back" data-skills-back>← Back to roadmap</button></div><p class="eyebrow">Skills studio</p><h2 id="skills-title">Build confidence<br><em>one skill at a time.</em></h2><div id="skills-grid" class="course-grid"><article class="course" data-course="digital"><span>01</span><i>⌁</i><h3>Digital confidence</h3><p>Email, online safety, files, and the tools you use every day.</p><button class="course-btn">Explore lessons →</button></article><article class="course" data-course="career"><span>02</span><i>✓</i><h3>Career essentials</h3><p>Tell your story, build a resume, and prepare for conversations.</p><button class="course-btn">Explore lessons →</button></article><article class="course" data-course="money"><span>03</span><i>$</i><h3>Money basics</h3><p>Practical choices for budgeting, saving, and planning ahead.</p><button class="course-btn">Explore lessons →</button></article></div><div id="lessons-view" style="display:none;"><button class="back" data-lessons-back>← Back to courses</button><div id="lessons-content"></div></div></section>
+<section id="opportunities" class="view"><div class="flow-head"><button class="back" data-back>← Back</button><p class="eyebrow">Opportunity finder</p><span>Explore / Demo</span></div><h2>Good opportunities start<br>with a <em>good fit.</em></h2><p class="intro">Use your roadmap to identify programs, credentials, and roles to investigate. Opportunity OS helps you prepare—always verify application details with the source.</p>
+
+<div class="finder-card">
+  <b>Try the mock Opportunity Finder</b>
+  <p style="margin-top:8px; color:var(--muted)">Search sample opportunity types tailored to your roadmap.</p>
+  <div style="margin-top:12px; display:flex; gap:8px; align-items:center">
+    <input id="finder-query" placeholder="e.g., entry-level data roles, community college programs" style="flex:1; padding:8px; border:1px solid var(--line); background:#fbfbf8" />
+    <button id="finder-run" class="primary">Run mock search →</button>
+  </div>
+  <div id="finder-demo-results" style="margin-top:16px"></div>
+</div>
+
+<div style="margin-top:22px;">
+  <b>Quick examples</b>
+  <div style="display:flex; gap:10px; margin-top:8px">
+    <button class="quick-example" data-q="entry-level data">Entry-level data</button>
+    <button class="quick-example" data-q="community college certificates">Community college</button>
+    <button class="quick-example" data-q="workforce training">Workforce training</button>
+  </div>
+</div>
+
+</section>
+<section id="profile" class="view">
+  <div class="flow-head"><button class="back" data-back>← Back</button><p class="eyebrow">Profile</p><span>Manage your links</span></div>
+  <div class="intake">
+    <div>
+      <h2>Profile & Links</h2>
+      <p class="eyebrow">Add social links to appear in your header</p>
+      <p style="color:var(--muted)">Only https:// links to LinkedIn, GitHub, and Instagram are accepted.</p>
+    </div>
+    <form id="profile-form">
+      <label for="linkedin">LinkedIn profile</label>
+      <input id="linkedin" name="linkedin" type="url" placeholder="https://www.linkedin.com/in/yourname" />
+
+      <label for="github">GitHub profile</label>
+      <input id="github" name="github" type="url" placeholder="https://github.com/yourname" />
+
+      <label for="instagram">Instagram profile</label>
+      <input id="instagram" name="instagram" type="url" placeholder="https://www.instagram.com/yourname" />
+
+      <div style="margin-top:12px;"><button class="primary" type="submit">Save profile</button></div>
+      <p id="profile-msg" style="margin-top:10px;color:var(--muted)"></p>
+    </form>
+  </div>
+</section>
+
+<section id="guide" class="view"><div class="guide-top"><div><p class="eyebrow">Your AI guide</p><h2>Ask what’s on<br>your <em>mind.</em></h2></div><div><button class="outline" data-guide-back>Back to roadmap</button><div class="guide-orb">✦</div></div></div><div id="guide-thread" class="thread"><div class="message assistant">I’m here to help you turn a question into one manageable next step. What would be most useful today?</div></div><form id="guide-form" class="ask"><input id="question" required placeholder="Example: How can I make my resume stronger with no experience?"><button aria-label="Send question" type="submit">↑</button></form><p class="guide-note">For education and career guidance only. Verify program, job, and financial details with official sources.</p></section>
+</main></div><script src="/app.js"></script></body></html>

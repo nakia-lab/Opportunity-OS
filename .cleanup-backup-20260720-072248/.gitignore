@@ -1,0 +1,11 @@
+node_modules/
+.env
+.DS_Store
+npm-debug.log*
+.env
+*.env
+node_modules/
+dist/
+.next/
+/opportunity-os/
+/opportunity-os/.git-nested-backup-20260720/

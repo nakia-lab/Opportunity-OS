@@ -1,0 +1,6 @@
+0000000000000000000000000000000000000000 50c6703b85fbabd1e385d1ef04ac955b1167c283 Nakia Russell <nakia264@gmail.com> 1784318513 -0400	commit (initial): Initial commit
+50c6703b85fbabd1e385d1ef04ac955b1167c283 778c3236b3dc4eb100f8b37efc4854c0248560c4 Nakia Russell <nakia264@gmail.com> 1784484632 -0400	commit: Add reasoning effort to Responses API calls for optimized performance
+778c3236b3dc4eb100f8b37efc4854c0248560c4 e0b4c1554b9d684271ab71d83dafe26bb6b638f5 Nakia Russell <nakia264@gmail.com> 1784488732 -0400	commit: Add mock mode for demo presentations
+e0b4c1554b9d684271ab71d83dafe26bb6b638f5 1ce86b3a1aa56148846a0fca83ce22deb862278c Nakia Russell <nakia264@gmail.com> 1784489774 -0400	commit: Add interactive Skills Studio with mock lessons and back button
+1ce86b3a1aa56148846a0fca83ce22deb862278c 28ff49871db09add402088dc9b6a1df798999ba3 Nakia Russell <nakia264@gmail.com> 1784519719 -0400	commit: Opportunity finder mock demo, guide back button, and mock-notice handling
+28ff49871db09add402088dc9b6a1df798999ba3 f3e9da627dffa8092a34f6070510230fb6cbe1f1 Nakia Russell <nakia264@gmail.com> 1784530584 -0400	commit: Add social links UI, profile form, and profile API endpoints
