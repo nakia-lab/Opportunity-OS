@@ -1,11 +1,26 @@
+# Dependencies
 node_modules/
+
+# Environment files
 .env
 .env.*
 !.env.example
+
+# Logs
 *.log
-.DS_Store
-Thumbs.db
+
+# Build output
 dist/
 coverage/
+
+# IDEs
 .vscode/
 .idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Prevent accidental Git backups
+.git-nested-backup-*/
+**/.git-nested-backup-*/
