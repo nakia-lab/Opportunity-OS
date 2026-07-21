@@ -54,7 +54,7 @@ Copy-Item .env.example .env
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Open `https://opportunity-os-is27.onrender.com`.
 
 To use OpenAI mode, add your key to `.env`:
 
